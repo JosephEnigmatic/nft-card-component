@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root {
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --main-bg-clr: hsl(217, 545%, 11%);
+    --card-bg-clr: hsl(216, 50%, 16%);
+    --white: hsl(0, 0%, 100%);
+
+    --light-weight: 300;
+    --normal-weight: 400;
+    --bold-weight: 600;
+}
+
+html {
+    font-size: 100%;
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    line-height: 1.5;
+    display: grid;
+    place-content: center;
+    background-color: var(--main-bg-clr);
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 300px;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: var(--card-bg-clr);
+    padding: 16px;
+}
+
+.card__image {
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.card__image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: hsla(178, 100%, 50%, 0.55);
+    background-image: url('./images/icon-view.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 700ms ease-in-out;
+    opacity: 0;
+}
+
+.card__image:hover::before {
+    opacity: 1;
+}
+
+.card__title {
+    color: var(--white);
+    font-weight: var(--bold-weight);
+    line-height: 1.1;
+    cursor: pointer;
+    transition: color 400ms ease-in-out;
+}
+
+.card__title:hover, .card__user span:hover {
+    color: var(--cyan);
+}
+
+.card__description {
+    color: var(--soft-blue);
+    font-weight: var(--light-weight);
+}
+
+.card__details {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 32px;
+    border-bottom: 1px solid hsl(215, 32%, 27%);
+}
+
+.card__details > * {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card__details-price {
+    color: var(--cyan);
+    font-weight: var(--bold-weight);
+}
+
+.card__details-time {
+    color: var(--soft-blue);
+    font-weight: var(--light-weight);
+}
+
+.card__user {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.card__user-avatar {
+    width: 32px;
+    border: 2px solid var(--white);
+    border-radius: 50%;
+}
+
+.card__user p {
+    color: var(--soft-blue);
+}
+
+.card__user span{
+    color: var(--white);
+    cursor: pointer;
+    transition: color 400ms ease-in-out;
+}
+
+/* add google font */
